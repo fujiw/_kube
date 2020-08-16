@@ -1,0 +1,8 @@
+version: "3.0"
+
+services:
+  deno:
+    image: denoapp
+    build: ./app/
+    ports:
+      - 8888:8888

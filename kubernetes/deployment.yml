@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deno-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: deno-app
+  template:
+    metadata:
+      labels:
+        app: deno-app
+    spec:
+      containers:
+      - name: deno-app
+        image: fujiw/denoapp
+        imagePullPolicy: IfNotPresent
+        command:
+        ports:
+          - containerPort: 8888
